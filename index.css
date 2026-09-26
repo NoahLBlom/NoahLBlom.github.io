@@ -20,7 +20,9 @@
       }
 
       #para4 {
-        Float:bottom right;
+        Float:bottom;
+         
+        Float:right;
       }
 
       #para3 {
