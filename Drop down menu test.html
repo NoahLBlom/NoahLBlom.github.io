@@ -1,13 +1,86 @@
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="Binair stelsel.html">Binairy system</a>
-      <a href="Kleurmodellen.html">Color models</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dropdown on hover</title>
+<style>
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Nav container */
+.nav {
+  font-family: Arial, sans-serif;
+  background: #333;
+  padding: 10 px;
+}
+
+/* Top-level item */
+.nav ul {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+}
+
+.nav > ul > li {
+  position: relative;        /* important for absolute submenu positioning */
+  display: inline-block;
+  margin-right: 1 rem;
+}
+
+/* Top-level link style */
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8 px 12 px;
+  display: inline-block;
+}
+
+/* Submenu (hidden by default) */
+.nav ul ul {
+  display: none;             /* hide by default */
+  position: absolute;
+  left: 0;
+  top: 100 %;                 /* place below the parent */
+  background: #fff;
+  border: 1 px solid #ccc;
+  min-width: 180 px;
+  z-index: 100;
+}
+
+/* Submenu links */
+.nav ul ul li a {
+  color: #333;
+  padding: 8 px 12 px;
+  display: block;
+}
+
+/* Show only the direct child submenu on hover */
+.nav > ul > li:hover > ul {
+  display: block;
+}
+
+/* Hover states */
+.nav ul ul li a:hover {
+  background: #f2f2f2;
+}
+
+/* If you later add a 3rd level, keep it from auto-opening:
+   use the '>' child selector when showing nested menus (see quotes above) */
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <ul>
+    <li>
+      <a href="#">computer insides</a>
+      <ul>
+        <li><a href="#">binary system</a></li>
+        <li><a href="#">color models</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+</body>
+</html>
