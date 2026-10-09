@@ -1,13 +1,18 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>Dropdown on hover</title>
+
+  <meta charset="utf-8">
+
+  <title>Dropdown on hover</title>
+
 <style>
-/* Basic reset */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Nav container */
+/* Hier komt de nav */
 .nav {
   font-family: Arial, sans-serif;
   background: #333;
@@ -22,12 +27,12 @@
 }
 
 .nav > ul > li {
-  position: relative;        /* important for absolute submenu positioning */
+  position: relative;       
   display: inline-block;
   margin-right: 1 rem;
 }
 
-/* Top-level link style */
+/* Opmaak top level link */
 .nav a {
   color: #fff;
   text-decoration: none;
@@ -35,12 +40,12 @@
   display: inline-block;
 }
 
-/* Submenu (hidden by default) */
+/* Submenu */
 .nav ul ul {
-  display: none;             /* hide by default */
+  display: none;             /* Altijd verbergen */
   position: absolute;
   left: 0;
-  top: 100;                 /* place below the parent */
+  top: 100;                 /* Plek onder bovenstaande */
   background: #fff;
   border: 1 px solid #ccc;
   min-width: 180 px;
@@ -54,7 +59,7 @@
   display: block;
 }
 
-/* Show only the direct child submenu on hover */
+/* Laat de onder niveau alleen zien als de cursor erop staat */
 .nav > ul > li:hover > ul {
   display: block;
 }
@@ -64,8 +69,6 @@
   background: #f2f2f2;
 }
 
-/* If you later add a 3rd level, keep it from auto-opening:
-   use the '>' child selector when showing nested menus (see quotes above) */
 </style>
 </head>
 <body>
