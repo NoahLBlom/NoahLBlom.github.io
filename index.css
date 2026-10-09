@@ -36,110 +36,63 @@
 
       }
 
-/* Basic reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; }
 
-/* Navigation wrapper */
+/* Hier komt de nav */
 .nav {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   background: #333;
-  padding: 10px;
+  padding: 10 px;
 }
 
-/* Top-level list */
+/* Top-level item */
 .nav ul {
   list-style: none;
+  display: inline-block;
+  position: relative;
 }
 
-/* Top-level items are inline */
-.nav > ul {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.nav > ul > li {
+  position: relative;       
+  display: inline-block;
+  margin-right: 1 rem;
 }
 
-/* Make each top-level li the positioning context for its submenu */
-.nav li {
-  position: relative; /* IMPORTANT: submenu will be positioned absolute relative to this */
-}
-
-/* Top-level link style */
-.nav > ul > li > a {
+/* Opmaak top level link */
+.nav a {
   color: #fff;
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 8 px 12 px;
   display: inline-block;
-  background: transparent;
-  border-radius: 4px;
-  transition: background .15s;
 }
 
-/* Hover/focus style for top-level */
-.nav > ul > li > a:hover,
-.nav > ul > li > a:focus {
-  background: rgba(255,255,255,0.08);
-}
-
-/* Submenu: hidden by default and positioned absolutely below the parent */
-.nav li ul {
-  display: none;          /* hide by default */
+/* Submenu */
+.nav ul ul {
+  display: none;             /* Altijd verbergen */
   position: absolute;
   left: 0;
-  top: 100%;              /* place right below the parent li */
+  top: 100;                 /* Plek onder bovenstaande */
   background: #fff;
-  border: 1px solid #ddd;
-  min-width: 180px;
-  padding: 6px 0;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-  z-index: 1000;
-}
-
-/* Submenu items */
-.nav li ul li {
-  display: block;
+  border: 1 px solid #ccc;
+  min-width: 180 px;
+  z-index: 100;
 }
 
 /* Submenu links */
-.nav li ul li a {
+.nav ul ul li a {
+  color: #333;
+  padding: 8 px 12 px;
   display: block;
-  padding: 8px 12px;
-  color: #222;
-  text-decoration: none;
-  white-space: nowrap;
 }
 
-/* Hover for submenu links */
-.nav li ul li a:hover,
-.nav li ul li a:focus {
+/* Laat de onder niveau alleen zien als de cursor erop staat */
+.nav > ul > li:hover > ul {
+  display: block;
+}
+
+/* Hover states */
+.nav ul ul li a:hover {
   background: #f2f2f2;
-}
-
-/* Show only the direct child submenu when hovering the parent li */
-/* This prevents nested submenus from all opening at once */
-.nav > ul > li:hover > ul,
-.nav > ul > li:focus-within > ul {
-  display: block;
-}
-
-/* Accessibility: allow keyboard focus to open the submenu */
-.nav li:focus-within > ul {
-  display: block;
-}
-
-/* Small responsive tweak: stack top-level items on narrow screens */
-@media (max-width: 520px) {
-  .nav > ul {
-    flex-direction: column;
-    gap: 0;
-  }
-  .nav > ul > li {
-    width: 100%;
-  }
-  .nav li ul {
-    position: static;
-    box-shadow: none;
-    border: none;
-    background: #f9f9f9;
-    padding-left: 12px;
-  }
 }
