@@ -30,6 +30,15 @@
         color:white
          }
 
+
+      #para5 {
+        text-align: right;
+        
+        color:white;
+
+        float:right;
+      }
+
       body  {
 
         background-color: rgb(45, 134, 189);
